@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ergebnis ✈️</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>✈️ Suchergebnis</h1>
+
+        {% if flight %}
+            <div class="result">
+                <h2>Flug {{ flight.number }}</h2>
+                <p>🛫 Von: {{ flight.origin }}</p>
+                <p>🛬 Nach: {{ flight.destination }}</p>
+                <p>🕐 Zeit: {{ flight.time }}</p>
+                <p>📅 Tage: {{ flight.days }}</p>
+            </div>
+        {% else %}
+            <div class="not-found">
+                <p>❌ Kein Flug gefunden für <strong>{{ flightnumber }}</strong></p>
+            </div>
+        {% endif %}
+
+        <a href="/">🔙 Zurück zur Suche</a>
+    </div>
+
+</body>
+</html>
