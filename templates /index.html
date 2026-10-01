@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ready for Take Off ✈️</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>✈️ Ready for Take Off</h1>
+        <p>Gib deine Flugnummer ein und finde deinen Flug!</p>
+
+        <form action="/search" method="POST">
+            <input
+                type="text"
+                name="flightnumber"
+                placeholder="z.B. LH400"
+                required>
+            <button type="submit">Suchen 🔍</button>
+        </form>
+    </div>
+<a href="/flights">📋 Alle Flüge ansehen</a>
+</body>
+</html>
