@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alle Flüge ✈️</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>✈️ Alle Flüge</h1>
+
+        {% for flight in flights %}
+            <div class="result">
+                <h2>Flug {{ flight.number }}</h2>
+                <p>🛫 Von: {{ flight.origin }}</p>
+                <p>🛬 Nach: {{ flight.destination }}</p>
+                <p>🕐 Zeit: {{ flight.time }}</p>
+                <p>📅 Tage: {{ flight.days }}</p>
+            </div>
+        {% endfor %}
+
+        <a href="/">🔙 Zurück zur Suche</a>
+    </div>
+
+</body>
+</html>
